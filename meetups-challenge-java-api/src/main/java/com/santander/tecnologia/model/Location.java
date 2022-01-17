@@ -81,4 +81,13 @@ public class Location {
     public int hashCode() {
         return Objects.hash(countryCode, city);
     }
+
+    @Override
+    public String toString() {
+        return "Location{" +
+                "id=" + id +
+                ", countryCode='" + countryCode + '\'' +
+                ", city='" + city + '\'' +
+                '}';
+    }
 }
