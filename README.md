@@ -35,7 +35,7 @@ In order to run this server you will need the following:
     ```bash
     $ docker run --name meetups-keycloak-container -p 8082:8080 meetups-keycloak-image
     ```
-3. The Keycloak instance (docker container) is built from image with pre-loaded with data:
+3. The Keycloak instance (docker container) is built from image with pre-loaded data:
     * Realm: __MeetupsChallenge__
     * Clients:
         * __java-meetups-challenge-api-public__: for user login, it returns an access token.
@@ -186,4 +186,4 @@ However, I wish I could have more time to finish the whole solution as shown in 
 * integration tests
 * automation tests
 ##### pending idea:
-I also love to programming in Python, so I'd like to create an API in FastAPI framework just for comparing performance and resource usage between different implementations.
+I also love to code in Python, so I'd like to create an API in FastAPI framework just for comparing performance and resource usage between different implementations.
