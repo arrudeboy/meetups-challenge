@@ -180,9 +180,9 @@ I proposed this software architecture to offer a scalable and maintainable solut
 However, I wish I could have more time to finish the whole solution as shown in the diagram.
 ##### pending items:
 * front-end development (meetups-challenge-web-ui)
-* API for locations (model)
 * i18n
 * reach more unit test coverage
+* passwords storage (or avoid store them in plain-text)
 * integration tests
 * automation tests
 ##### pending idea:
