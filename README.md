@@ -1,7 +1,7 @@
 # meetups-challenge
 
 > This project pretends to involve a microservices-based architecture. 
-> Due to lack of time, just two components have been developed.
+> Due to lack of time, just two components have been developed (backend components)
 
 ![architecture](https://i.imgur.com/STaOZp0.png)
 
