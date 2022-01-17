@@ -1,7 +1,7 @@
 # meetups-challenge
 
 > This project pretends to involve a microservices-based architecture. 
-> Due to lack of time, just two components have been developed.
+> Due to lack of time, just two components have been developed (backend components)
 
 ![architecture](https://i.imgur.com/STaOZp0.png)
 
@@ -35,7 +35,7 @@ In order to run this server you will need the following:
     ```bash
     $ docker run --name meetups-keycloak-container -p 8082:8080 meetups-keycloak-image
     ```
-3. The Keycloak instance (docker container) is built from image with pre-loaded with data:
+3. The Keycloak instance (docker container) is built from image with pre-loaded data:
     * Realm: __MeetupsChallenge__
     * Clients:
         * __java-meetups-challenge-api-public__: for user login, it returns an access token.
@@ -46,8 +46,8 @@ In order to run this server you will need the following:
         * __meetup_admin__
 
     * Users:
-        * __arturo.chari__ (with password '1234567890' and roles *meetup_admin* and *meetup_admin*)
-        * __felix.chari__ (with password '1234567890' and role *meetup_user*)
+        * __arturo.chari__ (with password '0123456789' and roles *meetup_admin* and *meetup_admin*)
+        * __felix.chari__ (with password '0123456789' and role *meetup_user*)
 
 4. You can log into the Keycloak (open browser http://localhost:8082) using the admin account (username: admin, password: admin).
 
@@ -128,9 +128,9 @@ http://localhost:8080/meetups-challenge-java-api
 http://localhost:8080/meetups-challenge-java-api/swagger-ui/index.html?configUrl=/meetups-challenge-java-api/v3/api-docs/swagger-config#
 ### email notifications
 
-Replace the following properties in src/main/resources/application.properties:
-* __spring.mail.username__: *<your-gmail-user>*
-* __spring.mail.password__: *<your-gmail-password>*
+Replace the following properties in [src/main/resources/application.properties](meetups-challenge-java-api/src/main/resources/application.properties):
+* __spring.mail.username__: *${your-gmail-user}*
+* __spring.mail.password__: *${your-gmail-password}*
 
 You also can pass these properties as VM properties when start the application:
 ```bash
@@ -180,10 +180,10 @@ I proposed this software architecture to offer a scalable and maintainable solut
 However, I wish I could have more time to finish the whole solution as shown in the diagram.
 ##### pending items:
 * front-end development (meetups-challenge-web-ui)
-* API for locations (model)
 * i18n
 * reach more unit test coverage
+* passwords storage (or avoid store them in plain-text)
 * integration tests
 * automation tests
 ##### pending idea:
-I also love to programming in Python, so I'd like to create an API in FastAPI framework just for comparing performance and resource usage between different implementations.
+I also love to code in Python, so I'd like to create an API in FastAPI framework just for comparing performance and resource usage between different implementations.
