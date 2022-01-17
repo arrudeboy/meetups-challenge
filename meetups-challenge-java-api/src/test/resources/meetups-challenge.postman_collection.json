@@ -1,0 +1,395 @@
+{
+	"info": {
+		"_postman_id": "a415d0a7-37bc-49d8-8368-c5dd5b109ff8",
+		"name": "meetups-challenge",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get_token",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [
+						{
+							"key": "grant_type",
+							"value": "password",
+							"type": "default"
+						},
+						{
+							"key": "client_id",
+							"value": "java-meetups-challenge-api-public",
+							"type": "default"
+						},
+						{
+							"key": "username",
+							"value": "arturo.chari",
+							"type": "default"
+						},
+						{
+							"key": "password",
+							"value": "0123456789",
+							"type": "default"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8082/auth/realms/MeetupsChallenge/protocol/openid-connect/token",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"auth",
+						"realms",
+						"MeetupsChallenge",
+						"protocol",
+						"openid-connect",
+						"token"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users/all",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0TVFXRjhtSTN3ZjNxVlR6ckZoMHhBMnJ1REJMcVBHeXAyMlpGNXR6amc4In0.eyJleHAiOjE2NDIzNzUyNzIsImlhdCI6MTY0MjM3NDk3MiwianRpIjoiMThkMDMzOGItMjRlNS00ZjBjLThjNTUtNzkwOWY1ZWEwNzkwIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL2F1dGgvcmVhbG1zL01lZXR1cHNDaGFsbGVuZ2UiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiOTE1YTVjZWQtZWIzZC00YmYyLTlmNjctYmVjMGFlYTVjYmJhIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiamF2YS1tZWV0dXBzLWNoYWxsZW5nZS1hcGktcHVibGljIiwic2Vzc2lvbl9zdGF0ZSI6ImY2NmY4M2FjLWI3OTctNGQwOC04Y2EzLTkwZDQ4NDFiMGFhMyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLW1lZXR1cHNjaGFsbGVuZ2UiLCJtZWV0dXBfdXNlciIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJtZWV0dXBfYWRtaW4iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYXJ0dXJvLmNoYXJpIiwiZW1haWwiOiJhcnR1cm9mZWxpeGNoYXJpQGdtYWlsLmNvbSJ9.DJBCpblx3jowOpNZH3Eqap4Hvq6k5Q3rY9LC3jLTlLyYvKqgxeLkq1zPWRCsnOGUGfk4zmctghmwWUmxQnMHVQfapIuAqQCeA-XvPQ3v60vT6O0-ZQ8KWjtoEm8_-O4NPGd8Jzzixu7puG4fwkHlI58Ucp4t2o4aEtbTSQMiZhZhxCRQxe-xasJ6vahOQLQnDWHJIrNjsq_PUSv7nn74t72x9VbYfQTvKCKvGjtzewwxSWvexdNZtx5rDeL7kPJA8ictXvfdLGhPSXkpF8bE5kpCFwO6BjS3klI6uFXZCSfv4puUpPrTL7xdpxWLzh0QjQmSmg7tHB6dUd5RLaO2hA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/meetups-challenge-java-api/users/all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"meetups-challenge-java-api",
+						"users",
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users/add",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0TVFXRjhtSTN3ZjNxVlR6ckZoMHhBMnJ1REJMcVBHeXAyMlpGNXR6amc4In0.eyJleHAiOjE2NDIxNjY3MjQsImlhdCI6MTY0MjE2NjQyNCwianRpIjoiOTYwOThkY2ItOGFmYS00Zjg1LTk0MjMtNzhjMjQ3YTU0MWMyIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL2F1dGgvcmVhbG1zL01lZXR1cHNDaGFsbGVuZ2UiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiOTE1YTVjZWQtZWIzZC00YmYyLTlmNjctYmVjMGFlYTVjYmJhIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiamF2YS1tZWV0dXBzLWNoYWxsZW5nZS1hcGktcHVibGljIiwic2Vzc2lvbl9zdGF0ZSI6IjIwOWE5YmVhLWViMWQtNDA4My1hYmI0LTRhODYwYjZjYjBiNiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLW1lZXR1cHNjaGFsbGVuZ2UiLCJtZWV0dXBfdXNlciIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJtZWV0dXBfYWRtaW4iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYXJ0dXJvLmNoYXJpIiwiZW1haWwiOiJhcnR1cm9mZWxpeGNoYXJpQGdtYWlsLmNvbSJ9.es3yYruZTblvSCoKyYoqw5W9faNWN9BSmBsqm0ngTSe7rSm0pKqg18xyAi0v4tvO8e-h-PeiewJycADAu427YuDfi80C3fuCL9Qd8p4Hx1UmcBNDyJ7QyCKue0sz9Zadmpt8VFUJdGVr0dug4PuVgLZ261A2CF_MCsbrdno3uC2pXEzYFCgQZ5vdYTnBIEG87XkJ2lGsI2lcsXjaSgkLzK-a-pcuadIkvENUkldpWQMBfnmwCxGaaZnmDXOKvpRm2mwvbXFY2yuxZD2HrVJ2IR5qAXdiQs_7fu_RaHfZwJ8hW0MFktXrRG6jmz0u6wlv0rg6_MDKy52IkOzIQAzs8Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"artuc\",\n    \"email\": \"artuc_86@hotmail.com\",\n    \"password\": \"0123456789\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/meetups-challenge-java-api/users/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"meetups-challenge-java-api",
+						"users",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users/update",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0TVFXRjhtSTN3ZjNxVlR6ckZoMHhBMnJ1REJMcVBHeXAyMlpGNXR6amc4In0.eyJleHAiOjE2NDIxNjMxMTQsImlhdCI6MTY0MjE2MjgxNCwianRpIjoiYzljMjg4NzAtZDlmNC00YjRiLWJhNjQtMjc5OGFlNDJhZTY1IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL2F1dGgvcmVhbG1zL01lZXR1cHNDaGFsbGVuZ2UiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiOTE1YTVjZWQtZWIzZC00YmYyLTlmNjctYmVjMGFlYTVjYmJhIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiamF2YS1tZWV0dXBzLWNoYWxsZW5nZS1hcGktcHVibGljIiwic2Vzc2lvbl9zdGF0ZSI6ImFlMzU4ZWRiLTk1ZDUtNDc1Ni1iOTNjLWQwYmY0MmY2YjdmMyIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLW1lZXR1cHNjaGFsbGVuZ2UiLCJtZWV0dXBfdXNlciIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJtZWV0dXBfYWRtaW4iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYXJ0dXJvLmNoYXJpIiwiZW1haWwiOiJhcnR1cm9mZWxpeGNoYXJpQGdtYWlsLmNvbSJ9.N5QOu-1tNFBrxcJV2MRaoNG-d1gnUqNmRCIAB8MOyfL1ZcrBebDKo0tAccs2EtlYJF2t-3GFs5JTUgn6IGtQo_IOPcpDWmN2ZGa4NX85pp-e-sYFQquR9ici4d384rFQBXoPZ91L81Cvu6Y1_RI3U-HIRRpJssVc5ZxI3aqOQOB5MzHLa0z59PVBxgEkXeMK9_ldXZz3LrOxB4iQhc3wuKApCnljgb6cjTzk678sILfXzFyVYVEHLmU4IX7qnN3VSdVt-qAP_qVZG3ZpTNDD8wV2eScbKwVary2UIicUECnDRGehoWswar5yefS1LADXZyAIz9joVjs8lj4TOYV0Xg",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 3,\n    \"email\": \"artuc_86@hotmail.com\",\n    \"password\": \"0123456789100\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/meetups-challenge-java-api/users/update",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"meetups-challenge-java-api",
+						"users",
+						"update"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "users/{id}",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0TVFXRjhtSTN3ZjNxVlR6ckZoMHhBMnJ1REJMcVBHeXAyMlpGNXR6amc4In0.eyJleHAiOjE2NDIxNjY3MjQsImlhdCI6MTY0MjE2NjQyNCwianRpIjoiOTYwOThkY2ItOGFmYS00Zjg1LTk0MjMtNzhjMjQ3YTU0MWMyIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL2F1dGgvcmVhbG1zL01lZXR1cHNDaGFsbGVuZ2UiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiOTE1YTVjZWQtZWIzZC00YmYyLTlmNjctYmVjMGFlYTVjYmJhIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiamF2YS1tZWV0dXBzLWNoYWxsZW5nZS1hcGktcHVibGljIiwic2Vzc2lvbl9zdGF0ZSI6IjIwOWE5YmVhLWViMWQtNDA4My1hYmI0LTRhODYwYjZjYjBiNiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLW1lZXR1cHNjaGFsbGVuZ2UiLCJtZWV0dXBfdXNlciIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJtZWV0dXBfYWRtaW4iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYXJ0dXJvLmNoYXJpIiwiZW1haWwiOiJhcnR1cm9mZWxpeGNoYXJpQGdtYWlsLmNvbSJ9.es3yYruZTblvSCoKyYoqw5W9faNWN9BSmBsqm0ngTSe7rSm0pKqg18xyAi0v4tvO8e-h-PeiewJycADAu427YuDfi80C3fuCL9Qd8p4Hx1UmcBNDyJ7QyCKue0sz9Zadmpt8VFUJdGVr0dug4PuVgLZ261A2CF_MCsbrdno3uC2pXEzYFCgQZ5vdYTnBIEG87XkJ2lGsI2lcsXjaSgkLzK-a-pcuadIkvENUkldpWQMBfnmwCxGaaZnmDXOKvpRm2mwvbXFY2yuxZD2HrVJ2IR5qAXdiQs_7fu_RaHfZwJ8hW0MFktXrRG6jmz0u6wlv0rg6_MDKy52IkOzIQAzs8Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/meetups-challenge-java-api/users/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"meetups-challenge-java-api",
+						"users",
+						"3"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "meetups/create",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0TVFXRjhtSTN3ZjNxVlR6ckZoMHhBMnJ1REJMcVBHeXAyMlpGNXR6amc4In0.eyJleHAiOjE2NDIxNjY3MjQsImlhdCI6MTY0MjE2NjQyNCwianRpIjoiOTYwOThkY2ItOGFmYS00Zjg1LTk0MjMtNzhjMjQ3YTU0MWMyIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL2F1dGgvcmVhbG1zL01lZXR1cHNDaGFsbGVuZ2UiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiOTE1YTVjZWQtZWIzZC00YmYyLTlmNjctYmVjMGFlYTVjYmJhIiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiamF2YS1tZWV0dXBzLWNoYWxsZW5nZS1hcGktcHVibGljIiwic2Vzc2lvbl9zdGF0ZSI6IjIwOWE5YmVhLWViMWQtNDA4My1hYmI0LTRhODYwYjZjYjBiNiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLW1lZXR1cHNjaGFsbGVuZ2UiLCJtZWV0dXBfdXNlciIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iLCJtZWV0dXBfYWRtaW4iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiYXJ0dXJvLmNoYXJpIiwiZW1haWwiOiJhcnR1cm9mZWxpeGNoYXJpQGdtYWlsLmNvbSJ9.es3yYruZTblvSCoKyYoqw5W9faNWN9BSmBsqm0ngTSe7rSm0pKqg18xyAi0v4tvO8e-h-PeiewJycADAu427YuDfi80C3fuCL9Qd8p4Hx1UmcBNDyJ7QyCKue0sz9Zadmpt8VFUJdGVr0dug4PuVgLZ261A2CF_MCsbrdno3uC2pXEzYFCgQZ5vdYTnBIEG87XkJ2lGsI2lcsXjaSgkLzK-a-pcuadIkvENUkldpWQMBfnmwCxGaaZnmDXOKvpRm2mwvbXFY2yuxZD2HrVJ2IR5qAXdiQs_7fu_RaHfZwJ8hW0MFktXrRG6jmz0u6wlv0rg6_MDKy52IkOzIQAzs8Q",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ownerUsername\": \"arturo.chari\",\n    \"sendInvitationUserIds\": [2],\n    \"date\": \"2022-01-15\",\n    \"time\": \"16:00:00\",\n    \"description\": \"Test Meetup\",\n    \"locationId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/meetups-challenge-java-api/meetups/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"meetups-challenge-java-api",
+						"meetups",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "meetups/{id}/weather",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0TVFXRjhtSTN3ZjNxVlR6ckZoMHhBMnJ1REJMcVBHeXAyMlpGNXR6amc4In0.eyJleHAiOjE2NDIxODMyMTAsImlhdCI6MTY0MjE4MjkxMCwianRpIjoiODgzMzVjOWItNjU1ZC00Nzc3LTlhNTYtYzQxYmQ5YmExYmVkIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL2F1dGgvcmVhbG1zL01lZXR1cHNDaGFsbGVuZ2UiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZTkxMzdlNmUtNmQ1YS00NWUyLWE1MGEtNWM4MThmM2ZlMmI3IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiamF2YS1tZWV0dXBzLWNoYWxsZW5nZS1hcGktcHVibGljIiwic2Vzc2lvbl9zdGF0ZSI6IjAyNTkzZTg0LTcyMjMtNDA4MC1iN2ZmLTcxZTIyNWU4ZWQ2YiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLW1lZXR1cHNjaGFsbGVuZ2UiLCJtZWV0dXBfdXNlciIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiZmVsaXguY2hhcmkiLCJlbWFpbCI6ImFydHVyby5jaGFyaUBpYm0uY29tIn0.W7ExI-hXfD2nzdtqVp1HYhW77qDtMUilUveCUKKovtB_FKlV2S_plCpZ4T9uQ6ILkiM8TboYModcbXjsJ24k3H8ZpGXzJYaK_YlyZmUAECMYYqvi17J5u0aXJUU3JIZbJy9H7k1FsQ2d4kZXBCYtuPJ9S9aA4qXlbZ_nayNEaTFrecm90nJdWGHWGHDr5M_YUe4RJVO5Vwg8exjpJnnKQYZWeJ8JoiLMl8ddzFLjLXUrryGmU4RJDo6eyN4k1xRG8EY-cu5h21TezM5_ijIj9R-37h1UnRfMDYWBMVai8Pb5sk-Gv6DU2rlfruJPXPIG6qiz8OIiYC5NldanU2mKMw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/meetups-challenge-java-api/meetups/1/weather",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"meetups-challenge-java-api",
+						"meetups",
+						"1",
+						"weather"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "meetups/{id}/beerPacksNeeded",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0TVFXRjhtSTN3ZjNxVlR6ckZoMHhBMnJ1REJMcVBHeXAyMlpGNXR6amc4In0.eyJleHAiOjE2NDIxODMyMTAsImlhdCI6MTY0MjE4MjkxMCwianRpIjoiODgzMzVjOWItNjU1ZC00Nzc3LTlhNTYtYzQxYmQ5YmExYmVkIiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL2F1dGgvcmVhbG1zL01lZXR1cHNDaGFsbGVuZ2UiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZTkxMzdlNmUtNmQ1YS00NWUyLWE1MGEtNWM4MThmM2ZlMmI3IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiamF2YS1tZWV0dXBzLWNoYWxsZW5nZS1hcGktcHVibGljIiwic2Vzc2lvbl9zdGF0ZSI6IjAyNTkzZTg0LTcyMjMtNDA4MC1iN2ZmLTcxZTIyNWU4ZWQ2YiIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLW1lZXR1cHNjaGFsbGVuZ2UiLCJtZWV0dXBfdXNlciIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiZmVsaXguY2hhcmkiLCJlbWFpbCI6ImFydHVyby5jaGFyaUBpYm0uY29tIn0.W7ExI-hXfD2nzdtqVp1HYhW77qDtMUilUveCUKKovtB_FKlV2S_plCpZ4T9uQ6ILkiM8TboYModcbXjsJ24k3H8ZpGXzJYaK_YlyZmUAECMYYqvi17J5u0aXJUU3JIZbJy9H7k1FsQ2d4kZXBCYtuPJ9S9aA4qXlbZ_nayNEaTFrecm90nJdWGHWGHDr5M_YUe4RJVO5Vwg8exjpJnnKQYZWeJ8JoiLMl8ddzFLjLXUrryGmU4RJDo6eyN4k1xRG8EY-cu5h21TezM5_ijIj9R-37h1UnRfMDYWBMVai8Pb5sk-Gv6DU2rlfruJPXPIG6qiz8OIiYC5NldanU2mKMw",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/meetups-challenge-java-api/meetups/1/beerPacksNeeded",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"meetups-challenge-java-api",
+						"meetups",
+						"1",
+						"beerPacksNeeded"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "meetupUsers/enroll",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0TVFXRjhtSTN3ZjNxVlR6ckZoMHhBMnJ1REJMcVBHeXAyMlpGNXR6amc4In0.eyJleHAiOjE2NDIxODkzNjcsImlhdCI6MTY0MjE4OTA2NywianRpIjoiNTBiM2MwNzYtMTAzYy00YmM3LWJmZjgtOWM3ZTNjYWFkNmE3IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL2F1dGgvcmVhbG1zL01lZXR1cHNDaGFsbGVuZ2UiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZTkxMzdlNmUtNmQ1YS00NWUyLWE1MGEtNWM4MThmM2ZlMmI3IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiamF2YS1tZWV0dXBzLWNoYWxsZW5nZS1hcGktcHVibGljIiwic2Vzc2lvbl9zdGF0ZSI6IjI2MWE5ZmU3LWYzMGItNGM0Zi1iYjkxLWYyMzJlNmI0YzdkZCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLW1lZXR1cHNjaGFsbGVuZ2UiLCJtZWV0dXBfdXNlciIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiZmVsaXguY2hhcmkiLCJlbWFpbCI6ImFydHVyby5jaGFyaUBpYm0uY29tIn0.ONePpUgRG8jI-drKSPCtQ1I_8baqigTkshyxdsMPf797aUZ-YlLoVZMpUJhLEn8lV79EIj0gPdWhQPiD1VqCT0WIEk5RaqXWTvLhfAh1rGJMTxxt_2aYHW4qNr-qW-zsGK1TkE29gEwTCNVJY3PB4u8Cz5Mm8_2ZkA9DecoaSi4MlHomFZIuQOc0GNJ0FrdqSpHqD0Y-ZAjwNrabge1un6PcuG4qzb4kriWlWhKOlprFiNvq2kVOj4ibwOv-KWZ6EqZuXCDiDTKnkREnSu3pYkZOAo39VbBTa2uiLJ4Bnhc4B6hRUTclClaC21ksmc5MZ1bDb1fCbrqc5-YhtlNPuQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 2,\n    \"meetupId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/meetups-challenge-java-api/meetupUsers/enroll",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"meetups-challenge-java-api",
+						"meetupUsers",
+						"enroll"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "meetupUsers/{id}/checkIn",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJSUzI1NiIsInR5cCIgOiAiSldUIiwia2lkIiA6ICJ0TVFXRjhtSTN3ZjNxVlR6ckZoMHhBMnJ1REJMcVBHeXAyMlpGNXR6amc4In0.eyJleHAiOjE2NDIxODkzNjcsImlhdCI6MTY0MjE4OTA2NywianRpIjoiNTBiM2MwNzYtMTAzYy00YmM3LWJmZjgtOWM3ZTNjYWFkNmE3IiwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDo4MDgyL2F1dGgvcmVhbG1zL01lZXR1cHNDaGFsbGVuZ2UiLCJhdWQiOiJhY2NvdW50Iiwic3ViIjoiZTkxMzdlNmUtNmQ1YS00NWUyLWE1MGEtNWM4MThmM2ZlMmI3IiwidHlwIjoiQmVhcmVyIiwiYXpwIjoiamF2YS1tZWV0dXBzLWNoYWxsZW5nZS1hcGktcHVibGljIiwic2Vzc2lvbl9zdGF0ZSI6IjI2MWE5ZmU3LWYzMGItNGM0Zi1iYjkxLWYyMzJlNmI0YzdkZCIsImFjciI6IjEiLCJhbGxvd2VkLW9yaWdpbnMiOlsiaHR0cDovL2xvY2FsaG9zdDo4MDgwIl0sInJlYWxtX2FjY2VzcyI6eyJyb2xlcyI6WyJkZWZhdWx0LXJvbGVzLW1lZXR1cHNjaGFsbGVuZ2UiLCJtZWV0dXBfdXNlciIsIm9mZmxpbmVfYWNjZXNzIiwidW1hX2F1dGhvcml6YXRpb24iXX0sInJlc291cmNlX2FjY2VzcyI6eyJhY2NvdW50Ijp7InJvbGVzIjpbIm1hbmFnZS1hY2NvdW50IiwibWFuYWdlLWFjY291bnQtbGlua3MiLCJ2aWV3LXByb2ZpbGUiXX19LCJzY29wZSI6InByb2ZpbGUgZW1haWwiLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwicHJlZmVycmVkX3VzZXJuYW1lIjoiZmVsaXguY2hhcmkiLCJlbWFpbCI6ImFydHVyby5jaGFyaUBpYm0uY29tIn0.ONePpUgRG8jI-drKSPCtQ1I_8baqigTkshyxdsMPf797aUZ-YlLoVZMpUJhLEn8lV79EIj0gPdWhQPiD1VqCT0WIEk5RaqXWTvLhfAh1rGJMTxxt_2aYHW4qNr-qW-zsGK1TkE29gEwTCNVJY3PB4u8Cz5Mm8_2ZkA9DecoaSi4MlHomFZIuQOc0GNJ0FrdqSpHqD0Y-ZAjwNrabge1un6PcuG4qzb4kriWlWhKOlprFiNvq2kVOj4ibwOv-KWZ6EqZuXCDiDTKnkREnSu3pYkZOAo39VbBTa2uiLJ4Bnhc4B6hRUTclClaC21ksmc5MZ1bDb1fCbrqc5-YhtlNPuQ",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"userId\": 2,\n    \"meetupId\": 1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/meetups-challenge-java-api/meetupUsers/1/checkIn",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"meetups-challenge-java-api",
+						"meetupUsers",
+						"1",
+						"checkIn"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
