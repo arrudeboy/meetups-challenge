@@ -46,8 +46,8 @@ In order to run this server you will need the following:
         * __meetup_admin__
 
     * Users:
-        * __arturo.chari__ (with password '1234567890' and roles *meetup_admin* and *meetup_admin*)
-        * __felix.chari__ (with password '1234567890' and role *meetup_user*)
+        * __arturo.chari__ (with password '0123456789' and roles *meetup_admin* and *meetup_admin*)
+        * __felix.chari__ (with password '0123456789' and role *meetup_user*)
 
 4. You can log into the Keycloak (open browser http://localhost:8082) using the admin account (username: admin, password: admin).
 
