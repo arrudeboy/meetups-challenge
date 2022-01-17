@@ -128,9 +128,9 @@ http://localhost:8080/meetups-challenge-java-api
 http://localhost:8080/meetups-challenge-java-api/swagger-ui/index.html?configUrl=/meetups-challenge-java-api/v3/api-docs/swagger-config#
 ### email notifications
 
-Replace the following properties in src/main/resources/application.properties:
-* __spring.mail.username__: *<your-gmail-user>*
-* __spring.mail.password__: *<your-gmail-password>*
+Replace the following properties in [src/main/resources/application.properties](meetups-challenge-java-api/src/main/resources/application.properties):
+* __spring.mail.username__: *${your-gmail-user}*
+* __spring.mail.password__: *${your-gmail-password}*
 
 You also can pass these properties as VM properties when start the application:
 ```bash
