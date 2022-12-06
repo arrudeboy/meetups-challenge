@@ -1,0 +1,16 @@
+<div class="header">
+  <h1 mat-dialog-title>{{ data.title }}</h1>
+</div>
+<div mat-dialog-content>
+  <ul class="mat-list">
+    <li class="mat-list-item">City, Country: <b>{{ data.city }}, {{ data.countryCode }}</b></li>
+    <li class="mat-list-item">Date: <b>{{ data.date }}</b></li>
+    <li class="mat-list-item">Time: <b>{{ data.time }}</b></li>
+    <li class="mat-list-item">Temperature: <b>{{ data.temperature }}</b></li>
+    <li class="mat-list-item">Temperature Min: <b>{{ data.temperatureMin }}</b></li>
+    <li class="mat-list-item">Temperature Max: <b>{{ data.temperatureMax }}</b></li>
+  </ul>
+</div>
+<div mat-dialog-actions>
+  <button class="btn" (click)="onClose()">Close</button>
+</div>

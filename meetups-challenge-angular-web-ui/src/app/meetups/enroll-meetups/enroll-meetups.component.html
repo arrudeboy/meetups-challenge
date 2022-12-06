@@ -1,0 +1,35 @@
+<div class="container mt-4">
+  <table class="table table-dark text-center">
+    <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+      <th scope="col">Description</th>
+      <th scope="col">Location</th>
+      <th scope="col">Enroll</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let meetup of meetups">
+      <td>{{meetup.date}}</td>
+      <td>{{meetup.time}}</td>
+      <td>{{meetup.description}}</td>
+      <td>{{meetup.location['city']}}, {{meetup.location['countryCode']}}</td>
+      <td>
+        <button (click)="openEnrollModal(enrollDialog, meetup.id)" class="btn btn-primary" type="button">
+          <i class="fas fa-user-plus"></i> Enroll
+        </button>
+        <ng-template #enrollDialog>
+          <div mat-dialog-content>
+            <h3>You have been enrolled to this meetup!</h3>
+          </div>
+          <div mat-dialog-actions align="end">
+            <button class="btn btn-primary" (click)="closeEnrollModalAndRedirect()">My meetups</button>
+            <button class="btn" (click)="closeEnrollModal()">Close</button>
+          </div>
+        </ng-template>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>

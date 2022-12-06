@@ -1,0 +1,71 @@
+<div class="container mt-4">
+  <table class="table table-dark text-center">
+    <thead>
+    <tr>
+      <th scope="col">Date</th>
+      <th scope="col">Time</th>
+      <th scope="col">Description</th>
+      <th scope="col">Location</th>
+      <th scope="col">Weather</th>
+      <th *ngIf="isAdmin" scope="col">Enrolled users</th>
+      <th *ngIf="isAdmin" scope="col">Beer packs needed</th>
+      <th *ngIf="!isAdmin" scope="col">Check in</th>
+    </tr>
+    </thead>
+    <tbody *ngIf="isAdmin">
+      <tr *ngFor="let meetup of meetups">
+        <td>{{meetup.date}}</td>
+        <td>{{meetup.time}}</td>
+        <td>{{meetup.description}}</td>
+        <td>{{meetup.location['city']}}, {{meetup.location['countryCode']}}</td>
+        <td>
+          <button (click)="onRequestWeather(meetup.id)" class="btn btn-primary" type="button"><i
+            class="fas fa-cloud-sun"></i> Forecast
+          </button>
+        </td>
+        <td>
+          <button (click)="onEnrolledUsers(meetup.id)" class="btn btn-primary" type="button"><i
+            class="fas fa-users"></i> View
+          </button>
+        </td>
+        <td>
+          <button (click)="openBeerPacksNeededModal(beerPacksNeededDialog, meetup.id)" class="btn btn-primary" type="button"><i
+            class="fas fa-beer"></i> Check
+          </button>
+          <ng-template #beerPacksNeededDialog>
+            <div mat-dialog-content>
+              <h3>We need {{ beerPacksNeeded }} beer packs !</h3>
+            </div>
+            <div mat-dialog-actions align="end">
+              <button class="btn" (click)="closeBeerPacksNeededModal()">Close</button>
+            </div>
+          </ng-template>
+        </td>
+      </tr>
+    </tbody>
+    <tbody *ngIf="!isAdmin">
+      <tr *ngFor="let userMeetup of userMeetups">
+        <td>{{userMeetup['meetup'].date}}</td>
+        <td>{{userMeetup['meetup'].time}}</td>
+        <td>{{userMeetup['meetup'].description}}</td>
+        <td>{{userMeetup['meetup'].location['city']}}, {{userMeetup['meetup'].location['countryCode']}}</td>
+        <td>
+          <button (click)="onRequestWeather(userMeetup['meetup'].id)" class="btn btn-primary" type="button"><i
+            class="fas fa-cloud-sun"></i> Forecast
+          </button>
+        </td>
+        <td>
+          <button *ngIf="!userMeetup.checkIn" (click)="onMeetupCheckIn(userMeetup.id)" class="btn btn-primary" type="button"><i
+            class="fas fa-calendar-check"></i> Check in
+          </button>
+          <span *ngIf="userMeetup.checkIn"><i
+            class="fas fa-check-circle"></i> Checked
+          </span>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <div *ngIf="isAdmin" class="text-center">
+    <button class="btn btn-primary" routerLink="/meetups/create"><i class="fas fa-plus-circle"></i> Create</button>
+  </div>
+</div>

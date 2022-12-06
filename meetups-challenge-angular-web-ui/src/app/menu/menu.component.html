@@ -1,0 +1,49 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <a class="navbar-brand" href="#">Meetups Challenge</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav">
+      <li *ngIf="isAdmin" class="nav-item">
+        <a class="nav-link" routerLink="/users">
+          <i class="far fa-list-alt"></i> Users</a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav">
+      <li *ngIf="isLogged" class="nav-item">
+        <a class="nav-link" routerLink="/meetups">
+          <i class="far fa-list-alt"></i>
+          <span *ngIf="isAdmin"> Meetups</span>
+          <span *ngIf="!isAdmin"> My Meetups</span>
+        </a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav">
+      <li *ngIf="isLogged && !isAdmin" class="nav-item">
+        <a class="nav-link" routerLink="/meetups/enroll">
+          <i class="far fa-list-alt"></i>
+          <span> Enroll</span>
+        </a>
+      </li>
+    </ul>
+
+    <ul class="navbar-nav ml-auto">
+      <li *ngIf="isLogged" class="nav-item mr-3">
+        <a class="nav-link" href="#">
+          Welcome {{username}}
+        </a>
+      </li>
+      <button *ngIf="!isLogged" class="btn btn-outline-warning mr-3" routerLink="/signup"><i class="fas fa-user-plus"></i>
+        Create account</button>
+      <button *ngIf="!isLogged" class="btn btn-outline-success" (click)="login()"><i class="fas fa-sign-in-alt"></i>
+        Login</button>
+      <button *ngIf="isLogged" class="btn btn-outline-warning" (click)="logout()"><i class="fas fa-sign-out-alt"></i>
+        Logout</button>
+    </ul>
+  </div>
+</nav>
